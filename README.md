@@ -1,1 +1,1 @@
-# new-template
+# GenTemplate
