@@ -1,16 +1,16 @@
 import * as _ from 'lodash';
-import {
-	getConvertedName,
-	createFileList,
-	getFileInfoListByNames,
-	getDefaultFileInfoList,
-} from './utils';
+
 import { FileInfoList, GenTemplateOptions } from './type';
+import {
+	createFileList,
+	getConvertedName,
+	getDefaultFileInfoList,
+	getFileInfoListByNames,
+} from './utils';
 
 /**
  * Create files by template options.
- * @params `string` the customize or default template file's dir.
- * @params `GetFileList` getFileList callback.
+ * @param {GenTemplateOptions} options the customize or default template file's dir and getFileList callback.
  */
 const genTemplate = (options?: GenTemplateOptions) => {
 	let getFileList, templateDirPath;

@@ -1,17 +1,17 @@
 import * as fs from 'fs';
-import * as path from 'path';
 import * as _ from 'lodash';
-import { getConvertedName } from './getConvertedName';
-import { createFile } from './createFile';
+import * as path from 'path';
+
 import { FileTemplateInfo } from '../type';
+import { createFile } from './createFile';
+import { getConvertedName } from './getConvertedName';
 
 /**
  * Create file by template.
- * @params `string` the name that will to convert.
- * @params `string` the dir path that will create files.
- * @params `string` the customize or default template file's dir.
- * @params `fileInfo.file` the file path that will to be created.
- * @params `fileInfo.template` the template content that will to be created.
+ * @param {string} name the name that will to convert.
+ * @param {string} dir the dir path that will create files.
+ * @param {string} templateDirPath the customize or default template file's dir.
+ * @param {FileTemplateInfo} fileInfo the file path and template content that will to be created.
  */
 export const createFileByTemplate = (
 	name: string,

@@ -2,8 +2,8 @@ import { GetFileList } from '../type';
 
 /**
  * Default file info list.
- * @params `Names` to generate file info list.
- * @return `FileInfoList` default file info list.
+ * @param {Names} name to generate file info list.
+ * @return {FileInfoList} default file info list.
  */
 export const getDefaultFileInfoList: GetFileList = names => {
 	const { name, pascalCaseName } = names;

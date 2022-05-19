@@ -1,10 +1,11 @@
 import * as _ from 'lodash';
+
 import { Names } from '../type';
 
 /**
  * Convert name to different case name, return converted names object.
- * @params `string` the string to convert.
- * @return `Names` return the compiled names object.
+ * @param {string} name the string to convert.
+ * @return {Names} return the compiled names object.
  */
 export const getConvertedName = (name: string): Names => {
 	return {

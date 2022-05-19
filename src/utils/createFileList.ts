@@ -1,18 +1,19 @@
 import * as fs from 'fs';
-import * as path from 'path';
 import * as _ from 'lodash';
+import * as path from 'path';
+
+import { FileInfoList } from '../type';
+import { consoleError, consoleSuccess } from './consoleLog';
 import { createFile } from './createFile';
 import { createFileByTemplate } from './createFileByTemplate';
-import { consoleError, consoleSuccess } from './consoleLog';
-import { FileInfoList } from '../type';
 
 const cwdPath = process.cwd();
 
 /**
  * Create files by file template list.
- * @params `string` the name that will to convert.
- * @params `string` the customize or default template file's dir.
- * @params `FileInfoList` the file template list for generate files.
+ * @param {string} name the name that will to convert.
+ * @param {string} templateDirPath the customize or default template file's dir.
+ * @param {FileInfoList} fileInfoList the file template list for generate files.
  */
 export const createFileList = (
 	name: string,
