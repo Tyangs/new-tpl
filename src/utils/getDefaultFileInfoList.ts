@@ -6,25 +6,25 @@ import { GetFileList } from '../type';
  * @return {FileInfoList} default file info list.
  */
 export const getDefaultFileInfoList: GetFileList = names => {
-	const { name, pascalCaseName } = names;
-	return {
-		[`src/components/${name}`]: [
-			{
-				file: 'index.ts',
-				template: 'index.ts.tpl',
-			},
-			{
-				file: `${pascalCaseName}.tsx`,
-				template: 'name.tsx.tpl',
-			},
-			{
-				file: `type.ts`,
-				template: 'type.ts.tpl',
-			},
-			{
-				file: `index.scss`,
-				template: 'index.scss.tpl',
-			},
-		],
-	};
+  const { name, pascalCaseName } = names;
+  return {
+    [`src/components/${name}`]: [
+      {
+        file: 'index.ts',
+        template: 'index.ts.tpl',
+      },
+      {
+        file: `${pascalCaseName}.tsx`,
+        template: 'name.tsx.tpl',
+      },
+      {
+        file: `type.ts`,
+        template: 'type.ts.tpl',
+      },
+      {
+        file: `index.scss`,
+        template: 'index.scss.tpl',
+      },
+    ],
+  };
 };

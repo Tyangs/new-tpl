@@ -16,29 +16,29 @@ const cwdPath = process.cwd();
  * @param {FileInfoList} fileInfoList the file template list for generate files.
  */
 export const createFileList = (
-	name: string,
-	templateDirPath: string,
-	fileInfoList: FileInfoList
+  name: string,
+  templateDirPath: string,
+  fileInfoList: FileInfoList
 ) => {
-	Object.keys(fileInfoList).forEach(dir => {
-		const curDir = path.resolve(cwdPath, dir);
-		// create dir
-		fs.mkdir(curDir, { recursive: true }, error => {
-			if (error) {
-				consoleError(error);
-				return;
-			}
-			consoleSuccess(`${curDir} directory has been created successfully！`);
-			// generate files in this dir
-			const curFiles = fileInfoList[dir];
-			curFiles.forEach(item => {
-				if (item.template) {
-					createFileByTemplate(name, curDir, templateDirPath, item);
-				} else {
-					const file = path.resolve(curDir, item.file);
-					createFile(file, '');
-				}
-			});
-		});
-	});
+  Object.keys(fileInfoList).forEach(dir => {
+    const curDir = path.resolve(cwdPath, dir);
+    // create dir
+    fs.mkdir(curDir, { recursive: true }, error => {
+      if (error) {
+        consoleError(error);
+        return;
+      }
+      consoleSuccess(`${curDir} directory has been created successfully！`);
+      // generate files in this dir
+      const curFiles = fileInfoList[dir];
+      curFiles.forEach(item => {
+        if (item.template) {
+          createFileByTemplate(name, curDir, templateDirPath, item);
+        } else {
+          const file = path.resolve(curDir, item.file);
+          createFile(file, '');
+        }
+      });
+    });
+  });
 };

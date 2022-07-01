@@ -1,4 +1,4 @@
-import { FileInfoList, GetFileList,Names } from '../type';
+import { FileInfoList, GetFileList, Names } from '../type';
 
 /**
  * Inject names to getFileList callback, return file info list.
@@ -7,4 +7,4 @@ import { FileInfoList, GetFileList,Names } from '../type';
  * @return {FileInfoList} execute getFileList callback, get file info list.
  */
 export const getFileInfoListByNames = (names: Names, callback: GetFileList): FileInfoList =>
-	callback({ ...names });
+  callback({ ...names });

@@ -14,18 +14,18 @@ import { getConvertedName } from './getConvertedName';
  * @param {FileTemplateInfo} fileInfo the file path and template content that will to be created.
  */
 export const createFileByTemplate = (
-	name: string,
-	dir: string,
-	templateDirPath: string,
-	fileInfo: FileTemplateInfo
+  name: string,
+  dir: string,
+  templateDirPath: string,
+  fileInfo: FileTemplateInfo
 ): void => {
-	const { file, template } = fileInfo;
+  const { file, template } = fileInfo;
 
-	const templatePath = path.resolve(__dirname, `${templateDirPath}/${template}`);
-	let data = fs.readFileSync(templatePath).toString();
-	const compiled = _.template(data);
-	const compiledNames = getConvertedName(name);
-	data = compiled(compiledNames);
-	const filePath = path.resolve(dir, file);
-	createFile(filePath, data);
+  const templatePath = path.resolve(__dirname, `${templateDirPath}/${template}`);
+  let data = fs.readFileSync(templatePath).toString();
+  const compiled = _.template(data);
+  const compiledNames = getConvertedName(name);
+  data = compiled(compiledNames);
+  const filePath = path.resolve(dir, file);
+  createFile(filePath, data);
 };
