@@ -1,1 +1,6 @@
-# GenTemplate
+# Gen template file
+
+## config
+```
+  
+```

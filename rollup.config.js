@@ -1,6 +1,7 @@
 import commonjs from 'rollup-plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
 import copy from 'rollup-plugin-copy';
+import typescript from 'rollup-plugin-typescript2';
+
 import pkg from './package.json';
 
 const { name, version, author, license } = pkg;
@@ -13,25 +14,25 @@ const banner = `/**
 `;
 
 export default {
-	input: 'src/index.ts',
-	external: ['lodash'],
-	output: [
-		{
-			banner,
-			file: 'dist/cjs/index.js',
-			format: 'cjs',
-		},
-		{
-			banner,
-			file: 'dist/esm/index.js',
-			format: 'es',
-		},
-	],
-	plugins: [
-		commonjs(),
-		typescript(),
-		copy({
-			targets: [{ src: 'src/template/*', dest: ['dist/cjs/template', 'dist/esm/template'] }],
-		}),
-	],
+  input: 'src/index.ts',
+  external: ['lodash'],
+  output: [
+    {
+      banner,
+      file: 'dist/cjs/index.js',
+      format: 'cjs',
+    },
+    {
+      banner,
+      file: 'dist/esm/index.js',
+      format: 'es',
+    },
+  ],
+  plugins: [
+    commonjs(),
+    typescript(),
+    copy({
+      targets: [{ src: 'src/template/*', dest: ['dist/cjs/template', 'dist/esm/template'] }],
+    }),
+  ],
 };

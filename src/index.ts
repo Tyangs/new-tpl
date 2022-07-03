@@ -10,7 +10,7 @@ import {
  * Create files by template options.
  * @param {IGenTemplateOptions} options the customize or default template file's dir and getFileList callback.
  */
-const genTemplate = (options?: IGenTemplateOptions) => {
+const newTemplate = (options?: IGenTemplateOptions) => {
   let getFileList, templateDirPath;
   if (!options) {
     getFileList = getDefaultFileInfoList;
@@ -25,4 +25,4 @@ const genTemplate = (options?: IGenTemplateOptions) => {
   createFileList(name, templateDirPath, fileList);
 };
 
-export default genTemplate;
+export default newTemplate;
