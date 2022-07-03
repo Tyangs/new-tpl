@@ -1,8 +1,8 @@
 import * as path from 'path';
 
-import { CONFIG_DIR_PATH, CWD_PATH } from './../constants/path';
-import { createFile } from './createFile';
-import { getFileContent } from './getFileContent';
+import { CONFIG_DIR_PATH, CWD_PATH } from './constants/path';
+import { createFile } from './utils/createFile';
+import { getFileContent } from './utils/getFileContent';
 
 export interface IInitConfigOptions {}
 

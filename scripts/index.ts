@@ -1,7 +1,7 @@
 import { Command } from 'commander';
 
 import pkg, { LOGO } from './constants/pkg';
-import { initConfig } from './utils/initConfig';
+import { initConfig } from './initConfig';
 
 const program = new Command('tpl')
   .version(pkg.version, '-V --version')
