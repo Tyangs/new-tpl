@@ -15,6 +15,7 @@ export type CreateFileSuccess = () => void;
     });
  */
 export const createFile = (path: string, data: string, onSuccess?: CreateFileSuccess) => {
+  // TODO: need to mkdir when no dir or file
   fs.writeFile(path, data, error => {
     if (error) {
       consoleError(error);

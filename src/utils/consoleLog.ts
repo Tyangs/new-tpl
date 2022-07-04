@@ -1,4 +1,4 @@
-import { ConsoleStatus, consoleStatusMap } from './../constants/colors';
+import { ConsoleStatus, consoleStatusMap } from '../constants/colors';
 
 const consoleLog = <T>(status: ConsoleStatus, content: T) => {
   const { color, prefix } = consoleStatusMap[status];

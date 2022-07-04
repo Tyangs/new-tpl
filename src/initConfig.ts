@@ -9,12 +9,14 @@ export const initConfig = () => {
   const configPath = path.resolve(CWD_PATH, CONFIG_DIR_PATH);
 
   createFileByTpls({
-    tplDir: './template/initConfig',
+    tplDir: path.resolve(__dirname, './template/initConfig'),
     outputDir: configPath,
   });
 
   createFileByTpls({
-    tplDir: './template/initConfig/template',
+    tplDir: path.resolve(__dirname, './template/initConfig/template'),
     outputDir: `${configPath}/template`,
   });
 };
+
+// initConfig();

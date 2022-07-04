@@ -1,3 +1,4 @@
+import json from '@rollup/plugin-json';
 import commonjs from 'rollup-plugin-commonjs';
 import copy from 'rollup-plugin-copy';
 import typescript from 'rollup-plugin-typescript2';
@@ -31,6 +32,7 @@ export default {
   plugins: [
     commonjs(),
     typescript(),
+    json(),
     copy({
       targets: [{ src: 'src/template/*', dest: ['dist/cjs/template', 'dist/esm/template'] }],
     }),
