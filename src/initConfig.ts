@@ -7,16 +7,12 @@ export interface IInitConfigOptions {}
 
 export const initConfig = () => {
   const configPath = path.resolve(CWD_PATH, CONFIG_DIR_PATH);
+  const configJsTplDir = path.resolve(__dirname, './template/initConfig');
 
-  createFileByTpls({
-    tplDir: path.resolve(__dirname, './template/initConfig'),
-    outputDir: configPath,
-  });
+  const initTplOutputDir = path.resolve(CWD_PATH, `${CONFIG_DIR_PATH}/template`);
+  const initTplDir = path.resolve(__dirname, './template/initConfig/template');
 
-  createFileByTpls({
-    tplDir: path.resolve(__dirname, './template/initConfig/template'),
-    outputDir: `${configPath}/template`,
-  });
+  createFileByTpls(configJsTplDir, configPath);
+
+  createFileByTpls(initTplDir, initTplOutputDir, true);
 };
-
-// initConfig();
