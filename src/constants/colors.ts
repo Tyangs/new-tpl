@@ -1,6 +1,6 @@
-export const SUCCESS_COLOR = '\x1B[32m%s\x1B[39m';
-export const ERROR_COLOR = '\x1B[32m%s\x1B[39m';
-export const WARNING_COLOR = '\x1B[32m%s\x1B[39m';
+export const SUCCESS_COLOR = '\x1b[32m';
+export const ERROR_COLOR = '\x1b[31m';
+export const WARNING_COLOR = '\x1b[33m';
 
 export const consoleStatusMap = {
   success: { color: SUCCESS_COLOR, prefix: 'Success: ' },

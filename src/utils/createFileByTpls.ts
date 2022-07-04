@@ -4,6 +4,12 @@ import { consoleError } from './consoleLog';
 import { createFile } from './createFile';
 import { getFileContent } from './getFileContent';
 
+/**
+ * generate files by tpls.
+ * @param tplDir tpls's dir path.
+ * @param outputDir target dir path thar file will output.
+ * @param isTpl is it a tpl file.
+ */
 export const createFileByTpls = (tplDir: string, outputDir: string, isTpl?: boolean) => {
   const tplFiles = fs.readdirSync(tplDir).filter(res => res.includes('.tpl'));
 

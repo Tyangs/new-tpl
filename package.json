@@ -11,6 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"src/**/*.ts\" --fix"
   },
+  "bin": {
+    "tpl": "./bin/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tyangs/new-tpl.git"
@@ -22,6 +25,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "files": [
+    "bin",
     "dist"
   ],
   "bugs": {
