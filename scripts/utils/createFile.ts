@@ -2,28 +2,17 @@ import * as fs from 'fs';
 
 import { consoleError, consoleSuccess } from './consoleLog';
 
-export type CreateFileSuccess = () => void;
-
 /**
- * create a file by custom `path` and `data`.
- * @param path the path that file will be created.
- * @param data the content of the file that will be written.
- * @param onSuccess the file is created successfully callback.
- * @example 
-    createFile('./index.ts', 'a new file', () => {
-      console.log('file be created successfully');
-    });
+ * Create file by `path` and `data`.
+ * @param {string} path the path that file will be created.
+ * @param {string} data the data content that file will be created.
  */
-export const createFile = (path: string, data: string, onSuccess?: CreateFileSuccess) => {
+export const createFile = (path: string, data: string): void => {
   fs.writeFile(path, data, error => {
     if (error) {
       consoleError(error);
       return;
     }
-    if (onSuccess) {
-      onSuccess();
-      return;
-    }
-    consoleSuccess(`${path} file has been created successfully!`);
+    consoleSuccess(`${path} file has been created successfully！`);
   });
 };
